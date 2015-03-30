@@ -24,9 +24,9 @@ switch(_shop) do
     {
         switch (true) do 
         {
-            case (playerSide != independent): {"You are not an EMS Medic"};
+            case (playerSide != independent): {"You are not an NHS Doctor"};
             default {
-                ["Hospital EMS Shop",
+                ["NHS Shop",
                     [
                         ["ItemGPS",nil,0],
                         ["Binocular",nil,0],
@@ -44,16 +44,13 @@ switch(_shop) do
     {
         switch(true) do
         {
-            case (playerSide != west): {"You are not a cop!"};
+            case (playerSide != west): {"You are not a Policeman!"};
             case (__GETC__(life_coplevel) > 6): 
             {
-                ["SWAT Shop",
+                ["RAPD: Commissioner Shop",
                     [
                         ["LMG_Zafir_F",nil,50000],
                         ["150Rnd_762x51_Box",nil,150],
-                        ["optic_Nightstalker",nil,2000],
-                        ["launch_RPG32_F",nil,60000],
-                        ["RPG32_F",nil,100],
                         ["SMG_01_F","Taser Rifle",20000],
                         ["B_UavTerminal",nil,100],
                         ["30Rnd_45ACP_Mag_SMG_01_tracer_green","Taser Magazine",50],
@@ -115,7 +112,7 @@ switch(_shop) do
             };
             case (__GETC__(life_coplevel) > 4): 
             {
-                ["Top Cop Shop",
+                ["RAPD: Superintendent and Chief Superintendent Shop  ",
                     [
 
                         ["SMG_01_F","Taser Rifle",20000],
@@ -175,14 +172,12 @@ switch(_shop) do
                     ]
                 ];
             };
-            case (__GETC__(life_coplevel) > 1): 
+			case (__GETC__(life_coplevel) > 2): 
             {
-                ["Altis Patrol Officer Shop",
+                ["RAPD: Sergeant Shop",
                     [
                         ["arifle_Katiba_C_F",nil,15000],
-                        ["arifle_MX_F",nil,20000],
-                        ["arifle_MXC_F",nil,17500],
-                        ["arifle_MXM_F",nil,25000],
+                        ["arifle_MX_F",nil,20000], 
                         ["SMG_01_F","Taser Rifle",20000],
                         ["30Rnd_45ACP_Mag_SMG_01_tracer_green","Taser Magazine",50],
                         ["SMG_02_F",nil,10000],
@@ -213,9 +208,42 @@ switch(_shop) do
                     ]
                 ];
             };
+            case (__GETC__(life_coplevel) > 1): 
+            {
+                ["RAPD: Police Constable",
+                    [
+                        ["arifle_MX_F",nil,20000], 
+                        ["SMG_01_F","Taser Rifle",20000],
+                        ["30Rnd_45ACP_Mag_SMG_01_tracer_green","Taser Magazine",50],
+                        ["SMG_02_F",nil,10000],
+                        ["MineDetector",nil,1000],
+                        ["acc_flashlight",nil,750],
+                        ["optic_Holosight",nil,1200],
+                        ["arifle_Mk20_F",nil,8000],
+                        ["30Rnd_556x45_Stanag",nil,110],
+                        ["30Rnd_9x21_Mag",nil,150],
+                        ["Rangefinder",nil,1000],
+                        ["optic_Hamr",nil,8000],
+                        ["optic_MRCO",nil,4000],
+                        ["Binocular",nil,100],
+                        ["ItemGPS",nil,100],
+                        ["ToolKit",nil,100],
+                        ["FirstAidKit",nil,1],
+                        ["Medikit",nil,2000],
+                        ["SmokeShell",nil,100],
+                        ["SmokeShellRed",nil,100],
+                        ["SmokeShellYellow",nil,100],
+                        ["SmokeShellPurple",nil,100],
+                        ["SmokeShellOrange",nil,100],
+                        ["B_Kitbag_cbr",nil,800],
+                        ["NVGoggles_OPFOR",nil,1000],
+                        ["MineDetector",nil,1000]
+                    ]
+                ];
+            };
             default
             {
-                ["Cadet Shop",
+                ["RAPD: Community Support Officer Shop",
                     [
                         ["SMG_01_F","Taser Rifle",20000],
                         ["30Rnd_45ACP_Mag_SMG_01_tracer_green","Taser Magazine",50],
@@ -244,10 +272,10 @@ switch(_shop) do
         switch(true) do
         {
             case (playerSide != civilian): {"You are not a civilian!"};
-            case (!license_civ_rebel): {"You don't have a Rebel training license!"};
+            case (!license_civ_gang): {"You don't have a Gang license!"};
             default
             {
-                ["Mohammed's Jihadi Shop",
+                ["Gang Shop",
                     [
                         ["SMG_01_F",nil,70000],
                         ["hgun_PDW2000_F",nil,60000],
@@ -373,12 +401,12 @@ switch(_shop) do
             case (playerSide != civilian): {"You are not a civilian!"};
             default
             {
-                ["Donator Weapon Shop",
+                ["Donator Shop",
                     [
 						["hgun_Pistol_Signal_F","Firework Launcher",6000],
-						["SMG_01_F",nil,50000],
-						["hgun_PDW2000_F",nil,42000],
-						["arifle_Mk20_F",nil,54000],
+						["SMG_01_F",nil,15000],
+						["hgun_PDW2000_F",nil,20000],
+						["arifle_Mk20_F",nil,40000],
 						["arifle_Katiba_F",nil,72000],
 						["arifle_Katiba_C_F",nil,60000],
 						["arifle_MX_Black_F",nil,84000],
